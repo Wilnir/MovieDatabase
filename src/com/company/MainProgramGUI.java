@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class MainProgramGUI {
     private static JFrame frame;
     private JPanel rootPanel;
-    private JList<Movie> movieJListModel;
+    private JList<Movie> movieJList;
     private JButton AddMovieJButton;
     private JButton EditMovieJButton;
     private JButton DelMovieJButton;
@@ -54,29 +54,37 @@ public class MainProgramGUI {
         movieListModel.addElement(new Movie("Sharknado 5: Global Swarming", 2017, 1.30, 4.3, IanZiering, AnthonyFerrante));
 
         // Setup for the movie JList
-        movieJListModel.setCellRenderer(new MovieCellRenderer());
-        movieJListModel.setModel(movieListModel);
-        movieJListModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        movieJList.setCellRenderer(new MovieCellRenderer());
+        movieJList.setModel(movieListModel);
+        movieJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // Get movie form JList selection
-        movieJListModel.addListSelectionListener(new ListSelectionListener() {
+        movieJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 // Check that selection is completed
                 if (!e.getValueIsAdjusting()) {
-                    movieDataPane.setText(movieJListModel.getSelectedValue().toString());
+                    if (movieJList.getSelectedIndex() == -1) {
+                        movieDataPane.setText("Select a movie from the list.");
+                        DelMovieJButton.setEnabled(false);
+                    } else
+                        movieDataPane.setText(movieJList.getSelectedValue().toString());
+                        DelMovieJButton.setEnabled(true);
                 }
 
-            }
+                }
         });
 
         // Remove movie from list with remove button.
         DelMovieJButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                movieListModel.remove(movieJListModel.getSelectedIndex());
-                movieListModel.removeElement(movieJListModel.getSelectedIndex());
+                int selectedIndex = movieJList.getSelectedIndex();
+                if (selectedIndex != -1) {
+                    movieListModel.remove(selectedIndex);
+                }
             }
+
         });
 
 

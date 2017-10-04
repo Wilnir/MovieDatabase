@@ -3,12 +3,12 @@
   <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="552" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="f1b56" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="f1b56" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="1" use-parent-layout="false">
@@ -18,95 +18,84 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="643c5" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <component id="a57df" class="javax.swing.JList" binding="movieJList">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="250" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <model/>
+            </properties>
+          </component>
+          <component id="69dac" class="javax.swing.JTextPane" binding="movieDataPane">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <grid id="35b86" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <minimumSize width="100" height="36"/>
+              <preferredSize width="100" height="36"/>
+            </properties>
             <border type="none"/>
             <children>
-              <hspacer id="d93c2">
+              <component id="2ce7d" class="javax.swing.JButton" binding="AddMovieJButton">
                 <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </hspacer>
-              <grid id="8d69" layout-manager="BorderLayout" hgap="0" vgap="0">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <enabled value="true"/>
+                  <alignmentX value="0.0"/>
+                  <alignmentY value="0.5"/>
+                  <autoscrolls value="false"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <preferredSize width="54" height="32"/>
+                  <text value="+"/>
                 </properties>
-                <border type="none"/>
-                <children>
-                  <toolbar id="b1c6d">
-                    <constraints border-constraint="Center"/>
-                    <properties>
-                      <alignmentY value="0.5"/>
-                      <floatable value="false"/>
-                      <orientation value="0"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="2ce7d" class="javax.swing.JButton" binding="AddMovieJButton">
-                        <constraints/>
-                        <properties>
-                          <alignmentX value="0.0"/>
-                          <alignmentY value="0.5"/>
-                          <autoscrolls value="false"/>
-                          <preferredSize width="54" height="32"/>
-                          <text value="+"/>
-                        </properties>
-                      </component>
-                      <component id="49395" class="javax.swing.JButton" binding="DelMovieJButton">
-                        <constraints/>
-                        <properties>
-                          <minimumSize width="36" height="32"/>
-                          <preferredSize width="36" height="32"/>
-                          <text value="-"/>
-                        </properties>
-                      </component>
-                      <component id="ca650" class="javax.swing.JButton" binding="EditMovieJButton">
-                        <constraints/>
-                        <properties>
-                          <alignmentX value="0.0"/>
-                          <enabled value="true"/>
-                          <hideActionText value="false"/>
-                          <horizontalAlignment value="0"/>
-                          <text value="Edit"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </toolbar>
-                </children>
-              </grid>
-              <component id="9230d" class="javax.swing.JList" binding="movieJListModel">
-                <constraints>
-                  <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="7" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="600"/>
-                  </grid>
-                </constraints>
-                <properties/>
               </component>
-              <grid id="c72f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
+              <component id="ca650" class="javax.swing.JButton" binding="EditMovieJButton">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="7d622" class="javax.swing.JTextPane" binding="movieDataPane">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="50"/>
-                      </grid>
-                    </constraints>
-                    <properties/>
-                  </component>
-                </children>
-              </grid>
+                <properties>
+                  <alignmentX value="0.0"/>
+                  <enabled value="true"/>
+                  <hideActionText value="false"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <text value="Edit"/>
+                </properties>
+              </component>
+              <component id="899e0" class="javax.swing.JButton" binding="DelMovieJButton">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <alignmentX value="0.0"/>
+                  <alignmentY value="0.5"/>
+                  <autoscrolls value="false"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <preferredSize width="54" height="32"/>
+                  <text value="-"/>
+                </properties>
+              </component>
+              <hspacer id="db96">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
             </children>
           </grid>
         </children>
